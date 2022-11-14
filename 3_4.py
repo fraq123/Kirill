@@ -4,7 +4,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-
+# авторизация на сайте
 @pytest.fixture()
 def browser():
     print("\nstart browser for test..")
@@ -32,10 +32,10 @@ def browser():
                                    "https://stepik.org/lesson/236898/step/1",
                                    "https://stepik.org/lesson/236903/step/1",
                                    "https://stepik.org/lesson/236904/step/1",
-                                   "https://stepik.org/lesson/236905/step/1"])
-class TestLogin:
+                                   "https://stepik.org/lesson/236905/step/1"]) # список url которые надо протестировать
+class TestLogin: 
     def test_guest_should_see_login_link(self, browser, links):
-        qq = math.log(int(time.time() + 2))
+        qq = math.log(int(time.time() + 2)) # данные которые надо ввести в строку для проверки
         link = links
         browser.get(link)
         time.sleep(5)
